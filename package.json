@@ -1,0 +1,23 @@
+{
+  "name": "obtuse-cave",
+  "version": "0.0.0",
+  "description": "Vuepress blog",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev",
+    "prod": "vuepress build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/obtusefox/obtusefox.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/obtusefox/obtusefox.github.io/issues"
+  },
+  "homepage": "https://github.com/obtusefox/obtusefox.github.io#readme",
+  "dependencies": {
+    "vuepress": "^0.14.8"
+  }
+}
