@@ -9,7 +9,7 @@ module.exports = {
     sidebar: [
       {
           title: 'About',
-          collapsable: true,
+          collapsable: false,
           children: [
           '/resume'
           ]
@@ -21,6 +21,13 @@ module.exports = {
               'koans/koan0',
               'koans/koan1',
               'koans/koan2'
+          ]
+      },
+      {
+          title: 'Rust 속성',
+          collapsable: true,
+          children: [
+              'rust-begin/rust0'
           ]
       }
       ]
