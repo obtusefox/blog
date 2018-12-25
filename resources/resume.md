@@ -9,8 +9,8 @@ Working everyday.
 * Rust / Scala
 
 ### Philosophical Area
-Alan Turing's Philosophy of Mind
-Seneca's Works
+* Alan Turing's Philosophy of Mind
+* Seneca's Works
 
 ## Academics
 * Seoul, Seoul Nation University, B.A.(Philosophy) / B.E.(Computer Science and Engineering) (2014.03 ~ 2019.08 exp.)
