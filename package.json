@@ -4,8 +4,8 @@
   "description": "Vuepress blog",
   "main": "index.js",
   "scripts": {
-    "dev": "vuepress dev",
-    "prod": "vuepress build",
+    "dev": "vuepress dev resources",
+    "prod": "vuepress build resources",
     "build": "vuepress build resources"
   },
   "repository": {

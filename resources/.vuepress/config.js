@@ -1,3 +1,4 @@
+
 module.exports = {
   title: 'ObtuseCave',
   description: 'Pseudo Computer Scientist',
@@ -14,11 +15,11 @@ module.exports = {
           ]
       },
       {
-          title: 'Pages',
+          title: 'Kotlin Koans',
           collapsable: false,
           children: [
-              '/Page-1',
-              '/Page-2'
+              'koans/koan1',
+              'koans/koan2'
           ]
       }
       ]
