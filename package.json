@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/obtusefox/obtusefox.github.io#readme",
   "dependencies": {
+    "markdown-it": "^8.4.2",
+    "markdown-it-footnote": "^3.0.1",
     "vuepress": "^0.14.8"
   }
 }

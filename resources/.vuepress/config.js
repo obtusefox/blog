@@ -27,9 +27,16 @@ module.exports = {
           title: 'Rust 속성',
           collapsable: true,
           children: [
-              'rust-begin/rust0'
+              'rust-begin/rust0',
+              'rust-begin/rust1'
           ]
       }
       ]
-  }
+  },
+  
+  markdown: {
+    config: md => {
+      md.use(require('markdown-it-footnote'))
+    }
+   }
 }
