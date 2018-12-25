@@ -7,7 +7,7 @@ tags: [개발, kotlin, 코틀린, 기초, Koans, Java]
 ---
 
 # Java to Kotlin Conversion
-자바인(Javanese)인 내게는 Java 기반으로 다른 언어를 설명하는 것이 편하다. Java에도 능숙하다고 하기는 어렵지만, '그나마' 제일 잘 다루는 것이 Java이다. Java Code를 Kotlin으로 옮기며 둘의 차이를 살펴보자.
+내게는 Java 기반으로 다른 언어를 설명하는 것이 편하다. Java에도 능숙하다고 하기는 어렵지만, 그나마 익숙한 것이 Java이다. 물론 이제는 Scala나 ML 같은 함수형 언어가 더 친숙해졌지만. Java Code를 Kotlin으로 옮기며 둘의 차이를 살펴보자.
 
 ## Java Code
 Java Code의 역할을 살펴보자.

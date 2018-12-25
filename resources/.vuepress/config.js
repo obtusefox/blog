@@ -8,16 +8,17 @@ module.exports = {
   themeConfig: {
     sidebar: [
       {
-          title: 'Main',
-          collapsable: false,
+          title: 'About',
+          collapsable: true,
           children: [
-          '/'
+          '/resume'
           ]
       },
       {
           title: 'Kotlin Koans',
-          collapsable: false,
+          collapsable: true,
           children: [
+              'koans/koan0',
               'koans/koan1',
               'koans/koan2'
           ]
