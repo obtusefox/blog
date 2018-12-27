@@ -36,7 +36,8 @@ module.exports = {
           title: 'Software Foundations',
           collapsable: true,
           children: [
-              'pl/sf/0-settings'
+              'pl/sf/0-settings',
+              'pl/sf/1-enumerated-types'
           ]
       }
     ]

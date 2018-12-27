@@ -1,5 +1,5 @@
 ---
-title:  "Software Foundations 0: 기초 셋팅"
+title:  "Basics 0. 기초 셋팅"
 date:   2018-07-16 12:07:40
 description: Upenn에서 제공하는 Software Foundations 교재를 공부하기 위한 셋팅
 categories: 개발
