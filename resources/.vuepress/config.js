@@ -9,7 +9,7 @@ module.exports = {
     sidebar: [
       {
           title: 'About',
-          collapsable: false,
+          collapsable: true,
           children: [
           '/resume'
           ]
@@ -24,19 +24,25 @@ module.exports = {
           ]
       },
       {
-          title: 'Rust 속성',
+          title: 'Software Foundations',
           collapsable: true,
           children: [
-              'rust-begin/rust0',
-              'rust-begin/rust1'
+              'pl/sf/0-settings'
           ]
+      },
+      {
+        title: 'Rust 속성',
+        collapsable: true,
+        children: [
+            'rust-begin/rust0',
+            'rust-begin/rust1'
+        ]
       }
-      ]
+    ]
   },
-  
-  markdown: {
-    config: md => {
-      md.use(require('markdown-it-footnote'))
-    }
-   }
+  markdow: {
+      config: md => {
+          md.use(require('markdown-it-footnote'))
+      }
+  }
 }
