@@ -23,13 +23,7 @@ module.exports = {
               'koans/koan2'
           ]
       },
-      {
-          title: 'Software Foundations',
-          collapsable: true,
-          children: [
-              'pl/sf/0-settings'
-          ]
-      },
+      
       {
         title: 'Rust 속성',
         collapsable: true,
@@ -37,6 +31,13 @@ module.exports = {
             'rust-begin/rust0',
             'rust-begin/rust1'
         ]
+      },
+      {
+          title: 'Software Foundations',
+          collapsable: true,
+          children: [
+              'pl/sf/0-settings'
+          ]
       }
     ]
   },
