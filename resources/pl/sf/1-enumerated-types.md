@@ -10,7 +10,9 @@ tags: [SF, Software_Foundations, Coq]
 *Software Foundations의 설명을 대부분 따라가되, 적당히 내게 필요한 부분만 간추린다.*
 
 ## Enumerated Types
-Coq 자체는 굉장히 기능이 제한적이고, 심지어 bool, int 등의 타입도 제공을 안한다. 대신 타입을 선언하기 좋은 방법을 제공한다고. 
+Coq 자체는 굉장히 기능이 제한적이고, 심지어 bool, int 등의 타입도 제공을 안한다. 대신 타입을 선언하기 좋은 방법을 제공한다고.
+
+우리는 먼저 enumerated type을 살펴볼 것이다. 예를 들어 요일 type의 원소들은 유한하고, 각각은 argument를 받지 않는, 그 자체로 constructor이다. 이런 element들의 유한한 set이 한 type을 이루는 경우, enumerated type에 속한다. 헤아릴 수 있는 형태라고 생각하자.
 
 ### 요일을 타입으로 나타내기
 그럼 그 예시로, 요일을 coq에서 선언해보자.

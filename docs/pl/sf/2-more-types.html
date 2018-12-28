@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Basics 2. 보다 다양한 type들 | ObtuseCave</title>
+    <meta name="description" content="Functions에 대해 알아보자.">
+    
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.9f33b487.css" as="style"><link rel="preload" href="/blog/assets/js/app.8420a491.js" as="script"><link rel="preload" href="/blog/assets/js/16.ed395046.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.524d0a26.js"><link rel="prefetch" href="/blog/assets/js/11.2bc96267.js"><link rel="prefetch" href="/blog/assets/js/12.ff8aae40.js"><link rel="prefetch" href="/blog/assets/js/13.5d737e9e.js"><link rel="prefetch" href="/blog/assets/js/14.fa172cda.js"><link rel="prefetch" href="/blog/assets/js/15.a9c24e69.js"><link rel="prefetch" href="/blog/assets/js/17.9a55f3fd.js"><link rel="prefetch" href="/blog/assets/js/18.6bf1617b.js"><link rel="prefetch" href="/blog/assets/js/19.ec11f358.js"><link rel="prefetch" href="/blog/assets/js/2.06d97229.js"><link rel="prefetch" href="/blog/assets/js/20.16c15303.js"><link rel="prefetch" href="/blog/assets/js/3.98885e4b.js"><link rel="prefetch" href="/blog/assets/js/4.0fe47e39.js"><link rel="prefetch" href="/blog/assets/js/5.57e84558.js"><link rel="prefetch" href="/blog/assets/js/6.6e408204.js"><link rel="prefetch" href="/blog/assets/js/7.2bb0b13b.js"><link rel="prefetch" href="/blog/assets/js/8.0a21718e.js"><link rel="prefetch" href="/blog/assets/js/9.d1a2472a.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.9f33b487.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">ObtuseCave</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><!---->  <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading"><span>About</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Kotlin Koans</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Rust 속성</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>Software Foundations</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/blog/pl/sf/0-settings.html" class="sidebar-link">Basics 0. 기초 셋팅</a></li><li><a href="/blog/pl/sf/1-enumerated-types.html" class="sidebar-link">Basics 1. Enumerated Types</a></li><li><a href="/blog/pl/sf/2-more-types.html" class="active sidebar-link">Basics 2. 보다 다양한 type들</a><ul class="sidebar-sub-headers"></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h3 id="type을-출력하기"><a href="#type을-출력하기" aria-hidden="true" class="header-anchor">#</a> Type을 출력하기</h3> <p>Coq에서 <code>Check</code>는 data나 function의 type을 출력한다.</p> <div class="language- extra-class"><pre class="language-text"><code>Check true.
+</code></pre></div><p>명령어는</p> <div class="language- extra-class"><pre class="language-text"><code>true
+     : bool
+</code></pre></div><p>을 출력한다. 함수 타입에 대해서는,</p> <div class="language- extra-class"><pre class="language-text"><code>Check negb.
+</code></pre></div><p>을 실행하면</p> <div class="language- extra-class"><pre class="language-text"><code>negb
+     : bool -&gt; bool
+</code></pre></div><p>가 출력된다. 어떤 데이터나 함수든지 Check를 통해 타입을 알 수 있다.</p> <h3 id="compound-types"><a href="#compound-types" aria-hidden="true" class="header-anchor">#</a> Compound Types</h3> <p>지금까지 정의된 type은 enumerated type이었다. 하지만 이와 달리, Constructor가 그 자체로 하나의 type이 되는 것이 아니라, argument를 받아 그때마다 다른 element를 만들 수도 있다.</p> <p>rgb 타입을 정의하자:</p> <div class="language- extra-class"><pre class="language-text"><code>Inductive rgb : Type :=
+  | red : rgb
+  | green : rgb
+  | blue : rgb.
+</code></pre></div><p>이것을 기반으로 다른 타입을 추가로 정의해보자.</p> <div class="language- extra-class"><pre class="language-text"><code>Inductive color : Type :=
+  | black : color
+  | white : color
+  | primary : rgb -&gt; color.
+</code></pre></div><p>color 타입에는, 앞에서와 마찬가지로 black, white의 argument를 받지 않는 constructor가 있고,
+rgb argument를 받아서 color를 내놓는 primary constructor가 있다.
+앞에서 정의한 rgb 타입들을 인자로 넘긴다.
+예를 들어 <code>primary red</code>는 하나의 color 타입의 값이 된다.
+그외에는 특별히 다른 것은 없어보인다.</p> <div class="language- extra-class"><pre class="language-text"><code>Definition monochrome (c : color) : bool :=
+  match c with
+  | black =&gt; true
+  | white =&gt; true
+  | primary p =&gt; false
+  end.
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>Definition isred (c : color) : bool :=
+  match c with
+  | black =&gt; false
+  | white =&gt; false
+  | primary red =&gt; true
+  | primary _ =&gt; false
+  end.
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/blog/pl/sf/1-enumerated-types.html" class="prev">
+          Basics 1. Enumerated Types
+        </a></span> <!----></p></div> </div> <!----></div></div>
+    <script src="/blog/assets/js/app.8420a491.js" defer></script><script src="/blog/assets/js/16.ed395046.js" defer></script>
+  </body>
+</html>
