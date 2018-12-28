@@ -38,7 +38,8 @@ module.exports = {
           children: [
               'pl/sf/0-settings',
               'pl/sf/1-enumerated-types',
-              'pl/sf/2-more-types'
+              'pl/sf/2-more-types',
+              'pl/sf/3-numbers'
           ]
       }
     ]
