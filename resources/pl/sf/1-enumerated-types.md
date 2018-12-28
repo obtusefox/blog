@@ -6,7 +6,7 @@ categories: 개발
 tags: [SF, Software_Foundations, Coq]
 ---
 
-###교재
+### 교재
 *Software Foundations의 설명을 대부분 따라가되, 적당히 내게 필요한 부분만 간추린다.*
 
 ## Enumerated Types
@@ -117,4 +117,4 @@ Example test_orb5:  false || false || true = true.
 Proof. simpl. reflexivity. Qed.
 ```
 와 같은 활용이 가능하다.
-Exercise에서는 nandb와 andb3를 정의하고 증명하도록 한다. 간단해서 아직은 설명이 필요 없을 듯. 위와 비슷하게 정의 및 증명이 가능.
+Exercise에서는 nandb와 andb3를 정의하고 증명하도록 한다. nandb의 경우, andb의 반대라는 것을 염두에 두자. 예를 들어 한 쪽이 false이면 결과값은 true이고, 한 쪽이 true라면 결과값은 다른 쪽의 negation일 것이다. andb3의 경우 하나하나 정의하기보다, 앞에서 만든 definition을 불러와서 활용하자.
