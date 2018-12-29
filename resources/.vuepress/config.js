@@ -15,6 +15,13 @@ module.exports = {
           ]
       },
       {
+        title: 'Devs',
+        collapsable: true,
+        children: [
+        '/devs/crouton'
+        ]
+    },
+      {
           title: 'Kotlin Koans',
           collapsable: true,
           children: [
