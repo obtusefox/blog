@@ -6,6 +6,8 @@ categories: 개발
 tags: [SF, Software_Foundations, Coq]
 ---
 
+## 다양한 type들
+
 ### Type을 출력하기
 Coq에서 `Check`는 data나 function의 type을 출력한다.
 ```

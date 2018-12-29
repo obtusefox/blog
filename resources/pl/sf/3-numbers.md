@@ -5,7 +5,7 @@ description: Numbers type을 Coq에서 구현해보자.
 categories: 개발
 tags: [SF, Software_Foundations, Coq]
 ---
-### Numbers Module
+## Numbers Module
 Coq에서는, 다른 언어와 마찬가지로, 모듈 시스템을 제공한다. 우리는 자연수 타입 선언과 그와 관련된 함수들을 Module로 만들어보도록 하자. `Module X`로 시작하여, 중간에 해당 모듈에 들어갈 타입 정의를 적고, `End X`로 끝내준다.
 ```
 Module NatPlayground.
@@ -102,3 +102,19 @@ Fixpoint minus (n m:nat) : nat :=
 ```
 이 또한 함수형 프로그램에서 익숙한 convention이다. 이상으로 number type에 대한 간략한 예제를 마친다. 추가적인 exercise는 boolean 예제보단 조금씩 머리를 쓰긴 해야 하지만, 마찬가지로 그렇게 어렵진 않다.
 
+### Notaion에 관해
+위에서 하던 대로 notation을 적용하자. 그런데 위와 달리 at level, associativity 같은 개념이 추가된다.
+```
+Notation "x + y" := (plus x y)
+                       (at level 50, left associativity)
+                       : nat_scope.
+Notation "x - y" := (minus x y)
+                       (at level 50, left associativity)
+                       : nat_scope.
+Notation "x * y" := (mult x y)
+                       (at level 40, left associativity)
+                       : nat_scope.
+```
+나중에 더 보겠지만, at level은 우선순위를 뜻한다.
+associativity는 계산이 어느 방향으로 associative한지를 표현한다.
+이에 대해서는 추후 더 자세히 다루도록 한다. "More on Notaion"에서.
