@@ -13,7 +13,7 @@ Working everyday.
 * Seneca's Works
 
 ## Academics
-* Seoul, Seoul Nation University, B.A.(Philosophy) / B.E.(Computer Science and Engineering) (2014.03 ~ 2019.08 exp.)
+* Seoul, Seoul National University, B.A.(Philosophy) / B.E.(Computer Science and Engineering) (2014.03 ~ 2019.08 exp.)
 * Seoul, Yonsei University, Economics (left during B.A. , 2013.03 ~ 2014.02)
 * Seoul, Hana Academy Seoul (2010.03 ~ 2013.02)
 
