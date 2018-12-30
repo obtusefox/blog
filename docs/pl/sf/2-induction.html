@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>2. Induction: Proof by Induction | ObtuseCave</title>
+    <meta name="description" content="Induction을 통해 증명을 해보자.">
+    
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.0d0af00e.css" as="style"><link rel="preload" href="/blog/assets/js/app.ffc81225.js" as="script"><link rel="preload" href="/blog/assets/js/18.dc9da3c1.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.b60ef62c.js"><link rel="prefetch" href="/blog/assets/js/11.36ed892a.js"><link rel="prefetch" href="/blog/assets/js/12.dae1a133.js"><link rel="prefetch" href="/blog/assets/js/13.f157933d.js"><link rel="prefetch" href="/blog/assets/js/14.ed5b3587.js"><link rel="prefetch" href="/blog/assets/js/15.b3308ec3.js"><link rel="prefetch" href="/blog/assets/js/16.ba57a2e1.js"><link rel="prefetch" href="/blog/assets/js/17.f96d6091.js"><link rel="prefetch" href="/blog/assets/js/19.de5a9187.js"><link rel="prefetch" href="/blog/assets/js/2.bd92b004.js"><link rel="prefetch" href="/blog/assets/js/20.335b8f78.js"><link rel="prefetch" href="/blog/assets/js/21.6ddb4214.js"><link rel="prefetch" href="/blog/assets/js/22.a142191f.js"><link rel="prefetch" href="/blog/assets/js/23.1bf6a0c3.js"><link rel="prefetch" href="/blog/assets/js/24.86bd2779.js"><link rel="prefetch" href="/blog/assets/js/25.f3725c9f.js"><link rel="prefetch" href="/blog/assets/js/3.0257c231.js"><link rel="prefetch" href="/blog/assets/js/4.08ef0e71.js"><link rel="prefetch" href="/blog/assets/js/5.08702996.js"><link rel="prefetch" href="/blog/assets/js/6.2caf8096.js"><link rel="prefetch" href="/blog/assets/js/7.509e1ea3.js"><link rel="prefetch" href="/blog/assets/js/8.b8a66ec3.js"><link rel="prefetch" href="/blog/assets/js/9.5cfce925.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.0d0af00e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">ObtuseCave</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><!---->  <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading"><span>About</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Devs</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Kotlin Koans</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Rust 속성</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>Software Foundations</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/blog/pl/sf/0-settings.html" class="sidebar-link">Basics 0. 기초 셋팅</a></li><li><a href="/blog/pl/sf/1-basics.html" class="sidebar-link">1. Basics: Coq의 기초 문법</a></li><li><a href="/blog/pl/sf/2-induction.html" class="active sidebar-link">2. Induction: Proof by Induction</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/pl/sf/2-induction.html#proof-by-induction" class="sidebar-link">Proof by Induction</a></li></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h2 id="proof-by-induction"><a href="#proof-by-induction" aria-hidden="true" class="header-anchor">#</a> Proof by Induction</h2> <p><code>Induction.v</code> 파일의 내용을 학습하자.</p> <h3 id="basics를-import하기"><a href="#basics를-import하기" aria-hidden="true" class="header-anchor">#</a> Basics를 import하기</h3> <p>다음 장을 시작하기에 앞서 앞장에서 다룬 Basics를 컴파일하여 import할 필요가 있다. 윈도우에서는 coqIde에서의 컴파일이 동작하지 않는 관계로, bash에서 컴파일을 해야 했다. 같은 버전으로 컴파일을 해야 하기에 다른 환경에서 컴파일한 것을 import하기도 마땅치 않다. 아무튼 coqIde와 같은 버전의 coq을 설치하고, 해당 경로에서 <code>coqc Basics.v</code>를 실행한다. 그리고 <code>From LF Require Export Basics.</code>로 import하도록 되어있지만, 경로명과 상관없이 import가 되지 않는다. 모듈 시스템에 대해 더 알아보면 고칠 수도 있겠는데, 기본으로 제시되는 메뉴얼을 따라서는 제대로 import가 되지 않는다. <code>Require Export Basics.</code>로 수정하면 그제서야 진행할 수 있다. 언어 자체의 간결성과 별개로, 개발환경 셋팅하기 참 곤란하기 그지없다.</p> <h3 id="n-n-0의-증명"><a href="#n-n-0의-증명" aria-hidden="true" class="header-anchor">#</a> n = n+0의 증명</h3> <div class="language- extra-class"><pre class="language-text"><code>Theorem plus_n_O_firsttry : forall n:nat,
+  n = n + 0.
+</code></pre></div><p>을 증명해보자.</p> <div class="language- extra-class"><pre class="language-text"><code>Proof.
+  intros n.
+  simpl. (* Does nothing! *)
+Abort.
+</code></pre></div><p>그런데 simpl 단계에서 아무것도 되지 않는다. n의 case에 따라 <code>+</code>가 simplified될 수 없기 때문에. 그럼 앞에서처럼 destruct를 써서 case를 나눠야 할까?</p> <div class="language- extra-class"><pre class="language-text"><code>Theorem plus_n_O_secondtry : forall n:nat,
+  n = n + 0.
+Proof.
+  intros n. destruct n as [| n'].
+  - (* n = 0 *)
+    reflexivity. (* so far so good... *)
+  - (* n = S n' *)
+    simpl.       (* ...but here we are stuck again *)
+Abort.
+</code></pre></div><p>마찬가지로 아무 일도 일어나지 않는다. 왜냐하면 두 번째 case에서 S(n' + 0)이 나타나며 다시금 <code>simpl.</code>이 아무것도 할 수 없기 때문. 여기에서 induction을 도입한다. 귀납. 우리의 예시에선, 어떠한 <code>n</code>에 대하여 <code>n = n + 0</code>이 성립한다면 <code>S n</code>에 대해서도 마찬가지가 성립함을 보여야 한다. 그런데 <code>n = n + 0</code>을 이미 보였다면, <code>S (n + 0)</code>에서 <code>n + 0</code>을 <code>n</code>으로 <code>rewrite</code>할 수 있을 것이다. 코드로는 다음과 같이 쓴다.</p> <div class="language- extra-class"><pre class="language-text"><code>Theorem plus_n_O : forall n:nat, n = n + 0.
+Proof.
+  intros n. induction n as [| n' IHn'].
+  - (* n = 0 *)    reflexivity.
+  - (* n = S n' *) simpl. rewrite &lt;- IHn'. reflexivity.  Qed.
+</code></pre></div><p>IHn'은 귀납적 전제에 붙여주는 이름이다. 따라서 IHn'이 아니라 다른 이름이 되어도 괜찮다. <code>rewrite &lt;- IHn'</code>를 통해 <code>n+0</code>을 <code>n</code>으로 대체한다. 그럼 위에서 해결되지 않던 <code>S (n' + 0)</code>의 경우가 해결된다.</p></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/blog/pl/sf/1-basics.html" class="prev">
+          1. Basics: Coq의 기초 문법
+        </a></span> <!----></p></div> </div> <!----></div></div>
+    <script src="/blog/assets/js/app.ffc81225.js" defer></script><script src="/blog/assets/js/18.dc9da3c1.js" defer></script>
+  </body>
+</html>

@@ -44,10 +44,8 @@ module.exports = {
           collapsable: true,
           children: [
               'pl/sf/0-settings',
-              'pl/sf/1-enumerated-types',
-              'pl/sf/2-more-types',
-              'pl/sf/3-numbers',
-              'pl/sf/4-proof-simpl'
+              'pl/sf/1-basics',
+              'pl/sf/2-induction'
           ]
       }
     ]
