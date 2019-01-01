@@ -44,3 +44,22 @@ Proof.
   - (* n = S n' *) simpl. rewrite <- IHn'. reflexivity.  Qed.
 ```
 IHn'은 귀납적 전제에 붙여주는 이름이다. 따라서 IHn'이 아니라 다른 이름이 되어도 괜찮다. `rewrite <- IHn'`를 통해 `n+0`을 `n`으로 대체한다. 그럼 위에서 해결되지 않던 `S (n' + 0)`의 경우가 해결된다.
+다음 예시로, 모든 n에 대하여 `minus n n`이 `0`임을 증명하자. destruct를 쓰는 증명의 경우
+```
+Proof.
+  intros n.
+  destruct n as [|n'].
+  - reflexivity.
+  - simpl.
+```
+마찬가지로 `S n'`에서 막힌다. 그렇기에 `induction`을 도입하자.
+```
+Proof.
+  induction n as [| n' IHn'].
+  - (* n = 0 *)
+    simpl. reflexivity.
+  - (* n = S n' *)
+    simpl. rewrite -> IHn'. reflexivity.  Qed.
+```
+여기서 `intros`는 불필요하다. `induction`이 `intros`의 역할까지 해주기 때문이다.
+나머지 예제들은 천천히 여태껏 배운 tactic들을 써보면 된다. 다만 `rewrite`에서 화살표의 방향에 따라 다르게 적용된다는 점에 주의하자. 이제부터는 생각을 하며 증명을 해야 한다. 그리고, 앞에서 증명한 Theorem을 바탕으로, 예를 들어 `rewrite plus_n_O`과 같은 tactic을 사용해야 한다. `plus_comm`은 `plus_n_0`와 `plus_n_Sm`을 사용하자. 
