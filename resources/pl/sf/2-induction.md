@@ -1,5 +1,5 @@
 ---
-title:  "2. Induction: Proof by Induction"
+title:  "2. Induction: 귀납에 의한 증명"
 date:   2018-07-16 12:07:40
 description: Induction을 통해 증명을 해보자.
 categories: 개발
