@@ -5,61 +5,58 @@ description: Coq에서 List 형태의 데이터를 다뤄보자.
 categories: 개발
 tags: [SF, Software_Foundations, Coq]
 ---
-## Proof by Induction
-`Lists.v` 파일의 내용을 학습하자.
+## Pair 타입
+우선 두 개의 nat을 가지는 pair type을 정의하자.
+```
+Inductive natprod : Type :=
+| pair : nat -> nat -> natprod.
+```
+`natprod` 타입은 pair라는 하나의 타입 유형을 가지는데, 이 pair는 두 개의 nat를 차례로 받아 하나의 pair를 만든다. 예를 들어
+```
+Check (pair 3 5).
+```
+를 실행하면,
+```
+pair 3 5
+     : natprod
+```
+가 response로 출력된다. `pair 3 5`는 `natprod` 타입의 한 종류이기 때문에, 그 타입은 natprod가 된다. 그럼 이제 이 pair에 대해 함수를 정의해보자. pair 타입이기 때문에 fst와 snd가 먼저 정의되어야 한다.
+```
+Definition fst ( p : natprod ) : nat :=
+  match p with
+  | pair x y => x
+  end.
+  
+Definition snd (p : natprod) : nat :=
+  match p with
+  | pair x y => y
+  end.
+```
+pair가 아닌 경우는 반환값을 정의하지 않았다. 그럼 이제 pair에다가 좀 더 편리한 표기법을 더해주자.
+```
+Notation "( x , y )" := (pair x y).
 
-### import 하기에 대해
+Definition fst' (p : natprod) : nat :=
+  match p with
+  | (x,y) => x
+  end.
 
+Definition snd' (p : natprod) : nat :=
+  match p with
+  | (x,y) => y
+  end.
 
-### n = n+0의 증명
+Definition swap_pair (p : natprod) : natprod :=
+  match p with
+  | (x,y) => (y,x)
+  end.
 ```
-Theorem plus_n_O_firsttry : forall n:nat,
-  n = n + 0.
+pair를 대충 정의하였으니, pair의 기본적인 성질들에 대해 증명을 해보자. 일단 surjectivity.
 ```
-을 증명해보자.
-```
+Theorem surjective_pairing' : forall (n m : nat),
+  (n,m) = (fst (n,m), snd (n,m)).
 Proof.
-  intros n.
-  simpl. (* Does nothing! *)
-Abort.
+  reflexivity.
+Qed.
 ```
-그런데 simpl 단계에서 아무것도 되지 않는다. n의 case에 따라 `+`가 simplified될 수 없기 때문에. 그럼 앞에서처럼 destruct를 써서 case를 나눠야 할까?
-```
-Theorem plus_n_O_secondtry : forall n:nat,
-  n = n + 0.
-Proof.
-  intros n. destruct n as [| n'].
-  - (* n = 0 *)
-    reflexivity. (* so far so good... *)
-  - (* n = S n' *)
-    simpl.       (* ...but here we are stuck again *)
-Abort.
-```
-마찬가지로 아무 일도 일어나지 않는다. 왜냐하면 두 번째 case에서 S(n' + 0)이 나타나며 다시금 `simpl.`이 아무것도 할 수 없기 때문. 여기에서 induction을 도입한다. 귀납. 우리의 예시에선, 어떠한 `n`에 대하여 `n = n + 0`이 성립한다면 `S n`에 대해서도 마찬가지가 성립함을 보여야 한다. 그런데 `n = n + 0`을 이미 보였다면, `S (n + 0)`에서 `n + 0`을 `n`으로 `rewrite`할 수 있을 것이다. 코드로는 다음과 같이 쓴다.
-```
-Theorem plus_n_O : forall n:nat, n = n + 0.
-Proof.
-  intros n. induction n as [| n' IHn'].
-  - (* n = 0 *)    reflexivity.
-  - (* n = S n' *) simpl. rewrite <- IHn'. reflexivity.  Qed.
-```
-IHn'은 귀납적 전제에 붙여주는 이름이다. 따라서 IHn'이 아니라 다른 이름이 되어도 괜찮다. `rewrite <- IHn'`를 통해 `n+0`을 `n`으로 대체한다. 그럼 위에서 해결되지 않던 `S (n' + 0)`의 경우가 해결된다.
-다음 예시로, 모든 n에 대하여 `minus n n`이 `0`임을 증명하자. destruct를 쓰는 증명의 경우
-```
-Proof.
-  intros n.
-  destruct n as [|n'].
-  - reflexivity.
-  - simpl.
-```
-마찬가지로 `S n'`에서 막힌다. 그렇기에 `induction`을 도입하자.
-```
-Proof.
-  induction n as [| n' IHn'].
-  - (* n = 0 *)
-    simpl. reflexivity.
-  - (* n = S n' *)
-    simpl. rewrite -> IHn'. reflexivity.  Qed.
-```
-여기서 `intros`는 불필요하다. `induction`이 `intros`의 역할까지 해주기 때문이다.
-나머지 예제들은 천천히 여태껏 배운 tactic들을 써보면 된다. 다만 `rewrite`에서 화살표의 방향에 따라 다르게 적용된다는 점에 주의하자. 이제부터는 생각을 하며 증명을 해야 한다. 그리고, 앞에서 증명한 Theorem을 바탕으로, 예를 들어 `rewrite plus_n_O`과 같은 tactic을 사용해야 한다. `plus_comm`은 `plus_n_0`와 `plus_n_Sm`을 사용하자.
+surjective function은 전사함수, y의 치역과 공역이 같을 때를 말한다. 이 경우에는 아마 이미 정의된 pair p에 대하여 새로 정의한 fst와 snd 함수를 적용했을 때, 그 결과물이 여전히 p이기 때문에, 공역과 치역이 같아진다고 말하는 듯 하다. 위의 경우는 이 p가 무엇을 의미하는지를, (n,m)과 같이 분리해서 적었기 때문에
