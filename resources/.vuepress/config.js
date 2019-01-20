@@ -7,9 +7,9 @@ module.exports = {
   theme: 'yuu',
   
   themeConfig: {
-    yuu: {
-			colorThemes: ['red'],
-		},
+      yuu: {
+          colorThemes: ['red', 'blue']
+      },
     sidebar: [
       {
           title: 'About',
@@ -53,7 +53,12 @@ module.exports = {
               'pl/sf/2-induction',
               'pl/sf/3-lists',
               'pl/sf/4-poly',
-              'pl/sf/5-tactics'
+              'pl/sf/5-tactics',
+              'pl/sf/6-logic',
+              'pl/sf/7-indProp',
+              'pl/sf/8-maps',
+              'pl/sf/9-imp',
+              'pl/sf/10-auto'
           ]
       }
     ]

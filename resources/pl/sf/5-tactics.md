@@ -46,3 +46,4 @@ Proof.
   apply eq2. apply eq1.  Qed.
 ```
 
+또한 가설 H를 `apply`한다면 
