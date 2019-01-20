@@ -6,6 +6,7 @@ categories: 개발
 tags: [개발]
 ---
 ## Crouton 셋팅하기
+(그러나 결국 다시 Crostini를 쓰기로 했다. 대신 텍스트 입력 문제가 적은 emacs를 사용하기로 결심.)
 
 ### Crostini를 쓰지 않을 이유
 성능은 crostini와 crouton 모두 비슷하다고 한다. 물론 crouton을 쓰면 그래픽 가속이 되지만, 나는 xiwi를 사용하기 때문에 해당 사항이 없다. 그러나 crostini를 쓸 때에는 간단하지만 기이한 버그가 나를 괴롭혔다. 입력 문제. 리눅스 앱으로 창 전환을 하면 `tttttt...`, `222222...` 등의 기이한 입력이 발생하는 것. 그리고 CoqIde 경우 파일 열기나 저장 다이얼로그를 아무리 꺼도 다시 창이 떠버리는 기이한 버그. 보고를 하긴 했는데 언제 고쳐질지 모르겠고, crostini가 그리 완벽하진 않음을 느꼈다. 가끔은 앱이 실행되지 않는듯 삐걱거리는 것이 늘 느껴진다. 결국 crostini가 제공하는 통합성을 포기하고 crouton을 사용하기로 했다.
@@ -20,7 +21,7 @@ tags: [개발]
 sudo cd ~/Downloads
 crouton -r bionic -t xiwi -n bionic
 ```
-명령어를 입력하면 된다. 오래 오래 걸려서 설치가 된다. 
+명령어를 입력하면 된다. 오래 오래 걸려서 설치가 된다.
 다시 shell에서
 ```
 >shell
@@ -45,7 +46,7 @@ sudo startxiwi pcmanfm
 을 이용해 탐색기를 띄워주자. 아까 받은 cros-adapata 테마를 .themes 폴더에 넣어주고, flat-remix 테마를 .themes 폴더에 넣어주자. 그리고 또 새 shell을 띄워서
 ```
 sudo startxiwi lxappearance
-``` 
+```
 로 외형 관리자를 실행하고 gtk 테마를 cros-adapta로, icon 테마를 flat-remix로 바꾸자. 이제 마찬가지 방식으로 다른 앱을 실행하면 예뻐져있는 것을 확인할 수 있다.
 
 다만 앱으로 가는 바로가기를 만들 수 없다는 것이 안타깝다. 이것은 chrome extension으로 만들 수 있는 권한 밖의 것인지 확인해보고, 가능하다면 직접 만들어보는 것도 괜찮을 것 같다.

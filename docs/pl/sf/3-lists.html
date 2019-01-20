@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>3. Lists: 배열 데이터 타입 | ObtuseCave</title>
+    <meta name="description" content="Coq에서 List 형태의 데이터를 다뤄보자.">
+    
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.c9b41c54.css" as="style"><link rel="preload" href="/blog/assets/js/app.c539ccee.js" as="script"><link rel="preload" href="/blog/assets/js/17.a0fa9794.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.96e84248.js"><link rel="prefetch" href="/blog/assets/js/11.17a970a6.js"><link rel="prefetch" href="/blog/assets/js/12.064ec3ea.js"><link rel="prefetch" href="/blog/assets/js/13.28554c03.js"><link rel="prefetch" href="/blog/assets/js/14.8bd9eea5.js"><link rel="prefetch" href="/blog/assets/js/15.97dad620.js"><link rel="prefetch" href="/blog/assets/js/16.df04d3e9.js"><link rel="prefetch" href="/blog/assets/js/18.7e38e1a4.js"><link rel="prefetch" href="/blog/assets/js/19.003762a2.js"><link rel="prefetch" href="/blog/assets/js/2.21768d5f.js"><link rel="prefetch" href="/blog/assets/js/20.12a3002e.js"><link rel="prefetch" href="/blog/assets/js/21.ff2bf2eb.js"><link rel="prefetch" href="/blog/assets/js/22.f389d3e4.js"><link rel="prefetch" href="/blog/assets/js/23.7450be0a.js"><link rel="prefetch" href="/blog/assets/js/24.d484da83.js"><link rel="prefetch" href="/blog/assets/js/25.8d69cabb.js"><link rel="prefetch" href="/blog/assets/js/26.0f6c73e8.js"><link rel="prefetch" href="/blog/assets/js/27.b746d8d1.js"><link rel="prefetch" href="/blog/assets/js/3.f7b1b7b0.js"><link rel="prefetch" href="/blog/assets/js/4.85e84715.js"><link rel="prefetch" href="/blog/assets/js/5.62177a9a.js"><link rel="prefetch" href="/blog/assets/js/6.6da5f049.js"><link rel="prefetch" href="/blog/assets/js/7.06ef36fc.js"><link rel="prefetch" href="/blog/assets/js/8.15f42482.js"><link rel="prefetch" href="/blog/assets/js/9.f0288653.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.c9b41c54.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">ObtuseCave</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><!---->  <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading"><span>About</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Devs</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Kotlin Koans</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Rust 속성</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>Software Foundations</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/blog/pl/sf/0-settings.html" class="sidebar-link">Basics 0. 기초 셋팅</a></li><li><a href="/blog/pl/sf/1-basics.html" class="sidebar-link">1. Basics: Coq의 기초 문법</a></li><li><a href="/blog/pl/sf/2-induction.html" class="sidebar-link">2. Induction: 귀납에 의한 증명</a></li><li><a href="/blog/pl/sf/3-lists.html" class="active sidebar-link">3. Lists: 배열 데이터 타입</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/pl/sf/3-lists.html#proof-by-induction" class="sidebar-link">Proof by Induction</a></li></ul></li><li><a href="/blog/pl/sf/4-poly.html" class="sidebar-link">4. Poly: Polymorphism, 다형성</a></li><li><a href="/blog/pl/sf/5-tactics.html" class="sidebar-link">5. Tactics: 추가적인 증명의 기술들</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h2 id="proof-by-induction"><a href="#proof-by-induction" aria-hidden="true" class="header-anchor">#</a> Proof by Induction</h2> <p><code>Lists.v</code> 파일의 내용을 학습하자.</p> <h3 id="import-하기에-대해"><a href="#import-하기에-대해" aria-hidden="true" class="header-anchor">#</a> import 하기에 대해</h3> <h3 id="n-n-0의-증명"><a href="#n-n-0의-증명" aria-hidden="true" class="header-anchor">#</a> n = n+0의 증명</h3> <div class="language- extra-class"><pre class="language-text"><code>Theorem plus_n_O_firsttry : forall n:nat,
+  n = n + 0.
+</code></pre></div><p>을 증명해보자.</p> <div class="language- extra-class"><pre class="language-text"><code>Proof.
+  intros n.
+  simpl. (* Does nothing! *)
+Abort.
+</code></pre></div><p>그런데 simpl 단계에서 아무것도 되지 않는다. n의 case에 따라 <code>+</code>가 simplified될 수 없기 때문에. 그럼 앞에서처럼 destruct를 써서 case를 나눠야 할까?</p> <div class="language- extra-class"><pre class="language-text"><code>Theorem plus_n_O_secondtry : forall n:nat,
+  n = n + 0.
+Proof.
+  intros n. destruct n as [| n'].
+  - (* n = 0 *)
+    reflexivity. (* so far so good... *)
+  - (* n = S n' *)
+    simpl.       (* ...but here we are stuck again *)
+Abort.
+</code></pre></div><p>마찬가지로 아무 일도 일어나지 않는다. 왜냐하면 두 번째 case에서 S(n' + 0)이 나타나며 다시금 <code>simpl.</code>이 아무것도 할 수 없기 때문. 여기에서 induction을 도입한다. 귀납. 우리의 예시에선, 어떠한 <code>n</code>에 대하여 <code>n = n + 0</code>이 성립한다면 <code>S n</code>에 대해서도 마찬가지가 성립함을 보여야 한다. 그런데 <code>n = n + 0</code>을 이미 보였다면, <code>S (n + 0)</code>에서 <code>n + 0</code>을 <code>n</code>으로 <code>rewrite</code>할 수 있을 것이다. 코드로는 다음과 같이 쓴다.</p> <div class="language- extra-class"><pre class="language-text"><code>Theorem plus_n_O : forall n:nat, n = n + 0.
+Proof.
+  intros n. induction n as [| n' IHn'].
+  - (* n = 0 *)    reflexivity.
+  - (* n = S n' *) simpl. rewrite &lt;- IHn'. reflexivity.  Qed.
+</code></pre></div><p>IHn'은 귀납적 전제에 붙여주는 이름이다. 따라서 IHn'이 아니라 다른 이름이 되어도 괜찮다. <code>rewrite &lt;- IHn'</code>를 통해 <code>n+0</code>을 <code>n</code>으로 대체한다. 그럼 위에서 해결되지 않던 <code>S (n' + 0)</code>의 경우가 해결된다.
+다음 예시로, 모든 n에 대하여 <code>minus n n</code>이 <code>0</code>임을 증명하자. destruct를 쓰는 증명의 경우</p> <div class="language- extra-class"><pre class="language-text"><code>Proof.
+  intros n.
+  destruct n as [|n'].
+  - reflexivity.
+  - simpl.
+</code></pre></div><p>마찬가지로 <code>S n'</code>에서 막힌다. 그렇기에 <code>induction</code>을 도입하자.</p> <div class="language- extra-class"><pre class="language-text"><code>Proof.
+  induction n as [| n' IHn'].
+  - (* n = 0 *)
+    simpl. reflexivity.
+  - (* n = S n' *)
+    simpl. rewrite -&gt; IHn'. reflexivity.  Qed.
+</code></pre></div><p>여기서 <code>intros</code>는 불필요하다. <code>induction</code>이 <code>intros</code>의 역할까지 해주기 때문이다.
+나머지 예제들은 천천히 여태껏 배운 tactic들을 써보면 된다. 다만 <code>rewrite</code>에서 화살표의 방향에 따라 다르게 적용된다는 점에 주의하자. 이제부터는 생각을 하며 증명을 해야 한다. 그리고, 앞에서 증명한 Theorem을 바탕으로, 예를 들어 <code>rewrite plus_n_O</code>과 같은 tactic을 사용해야 한다. <code>plus_comm</code>은 <code>plus_n_0</code>와 <code>plus_n_Sm</code>을 사용하자.</p></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/blog/pl/sf/2-induction.html" class="prev">
+          2. Induction: 귀납에 의한 증명
+        </a></span> <span class="next"><a href="/blog/pl/sf/4-poly.html">
+          4. Poly: Polymorphism, 다형성
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/blog/assets/js/app.c539ccee.js" defer></script><script src="/blog/assets/js/17.a0fa9794.js" defer></script>
+  </body>
+</html>

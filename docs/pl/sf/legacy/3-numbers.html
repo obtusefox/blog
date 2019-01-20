@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Basics 3. Numbers 구현 | ObtuseCave</title>
+    <meta name="description" content="Numbers type을 Coq에서 구현해보자.">
+    
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.c9b41c54.css" as="style"><link rel="preload" href="/blog/assets/js/app.c539ccee.js" as="script"><link rel="preload" href="/blog/assets/js/22.f389d3e4.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.96e84248.js"><link rel="prefetch" href="/blog/assets/js/11.17a970a6.js"><link rel="prefetch" href="/blog/assets/js/12.064ec3ea.js"><link rel="prefetch" href="/blog/assets/js/13.28554c03.js"><link rel="prefetch" href="/blog/assets/js/14.8bd9eea5.js"><link rel="prefetch" href="/blog/assets/js/15.97dad620.js"><link rel="prefetch" href="/blog/assets/js/16.df04d3e9.js"><link rel="prefetch" href="/blog/assets/js/17.a0fa9794.js"><link rel="prefetch" href="/blog/assets/js/18.7e38e1a4.js"><link rel="prefetch" href="/blog/assets/js/19.003762a2.js"><link rel="prefetch" href="/blog/assets/js/2.21768d5f.js"><link rel="prefetch" href="/blog/assets/js/20.12a3002e.js"><link rel="prefetch" href="/blog/assets/js/21.ff2bf2eb.js"><link rel="prefetch" href="/blog/assets/js/23.7450be0a.js"><link rel="prefetch" href="/blog/assets/js/24.d484da83.js"><link rel="prefetch" href="/blog/assets/js/25.8d69cabb.js"><link rel="prefetch" href="/blog/assets/js/26.0f6c73e8.js"><link rel="prefetch" href="/blog/assets/js/27.b746d8d1.js"><link rel="prefetch" href="/blog/assets/js/3.f7b1b7b0.js"><link rel="prefetch" href="/blog/assets/js/4.85e84715.js"><link rel="prefetch" href="/blog/assets/js/5.62177a9a.js"><link rel="prefetch" href="/blog/assets/js/6.6da5f049.js"><link rel="prefetch" href="/blog/assets/js/7.06ef36fc.js"><link rel="prefetch" href="/blog/assets/js/8.15f42482.js"><link rel="prefetch" href="/blog/assets/js/9.f0288653.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.c9b41c54.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">ObtuseCave</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><!---->  <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading open"><span>About</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/blog/resume.html" class="sidebar-link">About the Author</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Devs</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Kotlin Koans</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Rust 속성</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Software Foundations</span> <span class="arrow right"></span></p> <!----></div></li></ul> </div> <div class="page"> <div class="content"><h2 id="numbers-module"><a href="#numbers-module" aria-hidden="true" class="header-anchor">#</a> Numbers Module</h2> <p>Coq에서는, 다른 언어와 마찬가지로, 모듈 시스템을 제공한다. 우리는 자연수 타입 선언과 그와 관련된 함수들을 Module로 만들어보도록 하자. <code>Module X</code>로 시작하여, 중간에 해당 모듈에 들어갈 타입 정의를 적고, <code>End X</code>로 끝내준다.</p> <div class="language- extra-class"><pre class="language-text"><code>Module NatPlayground.
+... [ 여기에 코드를 입력 ]
+End NatPlayground.
+</code></pre></div><h3 id="numbers-type-정의"><a href="#numbers-type-정의" aria-hidden="true" class="header-anchor">#</a> Numbers type 정의</h3> <p>이제 그 내부를 채워보자. 마치 Nil과 Cons로 리스트 타입을 정의하던 것처럼,</p> <div class="language- extra-class"><pre class="language-text"><code>Inductive nat : Type :=
+  | O : nat
+  | S : nat -&gt; nat.
+</code></pre></div><p>O로, Nil처럼 0을 정의하고, S로, Cons처럼 그에 1씩 더해짐을 표현해보자. <code>S(O)</code>는 1, <code>S(S(O))</code>는 2... 그럼 우리는 숫자를 표현하는 방법, representation까지를 만든 셈이다.
+이것은 단순히 표기의 문제일 뿐이니,</p> <div class="language- extra-class"><pre class="language-text"><code>Inductive nat' : Type :=
+  | stop : nat'
+  | tick : nat' -&gt; nat'.
+</code></pre></div><p>와 같이 적어도 무방하다. 이름만 다르지 같은 데이터 구조를 나타내기 때문.</p> <h3 id="numbers-함수"><a href="#numbers-함수" aria-hidden="true" class="header-anchor">#</a> Numbers 함수</h3> <p>그럼 함수를 만들어보자. nat type의 n에 대해, 그 predecessor를 반환하는 pred함수.</p> <div class="language- extra-class"><pre class="language-text"><code>Definition pred (n : nat) : nat :=
+  match n with
+    | O =&gt; O
+    | S n' =&gt; n'
+  end.
+</code></pre></div><p>일단 O에 대해서는 predecessor가 O라고 정하자. 그럼 O에 대해서는 O를 반환하고, 그보다 큰 어떠한 S(n')에 대해서는 n'을 반환한다. 이렇게 numbers 타입들을 정의해보았다.
+그런데 coq는 자동으로 데이터 타입을 내부적으로 숫자로 변환하기도 한다.</p> <div class="language- extra-class"><pre class="language-text"><code>Check (S (S (S (S O)))).
+</code></pre></div><p>을 확인하면</p> <div class="language- extra-class"><pre class="language-text"><code>  4 : nat
+</code></pre></div><p>값이 반환된다. 자동으로 constructor들을 정의해준 것을 알 수 있다.
+이제 이 숫자값에 대해, pred와 유사하게 minustwo 함수를 정의해보자. 우리는 음수 타입을 정의하지 않았으므로, 음수값에 대해서는 O를 반환하자.</p> <div class="language- extra-class"><pre class="language-text"><code>Definition minustwo (n : nat) : nat :=
+  match n with
+    | O =&gt; O
+    | S O =&gt; O
+    | S (S n') =&gt; n'
+  end.
+</code></pre></div><p>으로 정의하고</p> <div class="language- extra-class"><pre class="language-text"><code>Compute (minustwo 4).
+</code></pre></div><p>계산해보면, <code>2: nat</code> 값을 반환한다. 증명 과정에선 compute 대신 simpl.을 사용하여 evaluate할 수 있다.</p> <h3 id="fixpoint"><a href="#fixpoint" aria-hidden="true" class="header-anchor">#</a> Fixpoint</h3> <p>앞서 정의한 함수들은 사실 간단한 경우들이다. 그런데 실제로 무언가 유용하거나 좀 더 복잡한 함수를 만들기 위해서는 단순히 각 타입에 대해 한 번에 evaluation이 끝나는 것이 아니라, recursion이 필요한 경우가 있다. 이런 타입에 대해서는 Fixpoint로 함수 선언을 한다.
+인자로 주어진 값이 짝수인지를 판별하는 함수를 선언해보자.</p> <div class="language- extra-class"><pre class="language-text"><code>Fixpoint evenb (n:nat) : bool :=
+  match n with
+  | O        =&gt; true
+  | S O      =&gt; false
+  | S (S n') =&gt; evenb n'
+  end.
+</code></pre></div><p>0, 1의 경우에는 앞서 정의한 바와 같이 정의가 되지만 그보다 큰 수에 대해서는 재귀적으로 함수 정의를 하게 된다. <code>S (S n')</code>의 경우, 다시 적자면 <code>1 + 1 + n'</code>의 경우는 <code>n'</code>이 짝수인지를 evaluate하여 반환한다.
+비슷한 방식으로 두 자연수를 더하는 plus 함수를 정의해보자.</p> <div class="language- extra-class"><pre class="language-text"><code>Fixpoint plus (n : nat) (m : nat) : nat :=
+  match n with
+    | O =&gt; m
+    | S n' =&gt; S (plus n' m)
+  end.
+</code></pre></div><p>이를 바탕으로 mult 함수까지 정의해보자. 여러 인자가 같은 타입인 경우 한 번에 타입 선언을 할 수 있다.</p> <div class="language- extra-class"><pre class="language-text"><code>Fixpoint mult (n m : nat) : nat :=
+  match n with
+    | O =&gt; O
+    | S n' =&gt; plus m (mult n' m)
+  end.
+</code></pre></div><p>혹은, 여러 인자를 한 번에 <code>,</code>로 구분하여 case matching을 할 수 있다. 대해, 다른 인자의 값이 상관 없는 경우 case matching에서 상관 없는 인자를 <code>_</code>로 적을 수 있다.</p> <div class="language- extra-class"><pre class="language-text"><code>Fixpoint minus (n m:nat) : nat :=
+  match n, m with
+  | O   , _    =&gt; O
+  | S _ , O    =&gt; n
+  | S n', S m' =&gt; minus n' m'
+  end.
+</code></pre></div><p>이 또한 함수형 프로그램에서 익숙한 convention이다. 이상으로 number type에 대한 간략한 예제를 마친다. 추가적인 exercise는 boolean 예제보단 조금씩 머리를 쓰긴 해야 하지만, 마찬가지로 그렇게 어렵진 않다.</p> <h3 id="notaion에-관해"><a href="#notaion에-관해" aria-hidden="true" class="header-anchor">#</a> Notaion에 관해</h3> <p>위에서 하던 대로 notation을 적용하자. 그런데 위와 달리 at level, associativity 같은 개념이 추가된다.</p> <div class="language- extra-class"><pre class="language-text"><code>Notation &quot;x + y&quot; := (plus x y)
+                       (at level 50, left associativity)
+                       : nat_scope.
+Notation &quot;x - y&quot; := (minus x y)
+                       (at level 50, left associativity)
+                       : nat_scope.
+Notation &quot;x * y&quot; := (mult x y)
+                       (at level 40, left associativity)
+                       : nat_scope.
+</code></pre></div><p>나중에 더 보겠지만, at level은 우선순위를 뜻한다.
+associativity는 계산이 어느 방향으로 associative한지를 표현한다.
+이에 대해서는 추후 더 자세히 다루도록 한다. &quot;More on Notaion&quot;에서.</p></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/blog/assets/js/app.c539ccee.js" defer></script><script src="/blog/assets/js/22.f389d3e4.js" defer></script>
+  </body>
+</html>

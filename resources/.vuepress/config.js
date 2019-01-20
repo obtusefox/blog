@@ -18,7 +18,8 @@ module.exports = {
         title: 'Devs',
         collapsable: true,
         children: [
-        '/devs/crouton'
+        '/devs/crouton',
+        '/devs/emacs-basics'
         ]
     },
       {
@@ -45,7 +46,10 @@ module.exports = {
           children: [
               'pl/sf/0-settings',
               'pl/sf/1-basics',
-              'pl/sf/2-induction'
+              'pl/sf/2-induction',
+              'pl/sf/3-lists',
+              'pl/sf/4-poly',
+              'pl/sf/5-tactics'
           ]
       }
     ]

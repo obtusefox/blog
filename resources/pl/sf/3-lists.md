@@ -1,7 +1,7 @@
 ---
 title:  "3. Lists: 배열 데이터 타입"
 date:   2018-07-16 12:07:40
-description: Coq에서의 List 타입에
+description: Coq에서 List 형태의 데이터를 다뤄보자.
 categories: 개발
 tags: [SF, Software_Foundations, Coq]
 ---
