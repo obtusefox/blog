@@ -8,13 +8,13 @@ tags: [개발]
 ## Crouton 셋팅하기
 (그러나 결국 다시 Crostini를 쓰기로 했다. 대신 텍스트 입력 문제가 적은 emacs를 사용하기로 결심.)
 
-### Crostini를 쓰지 않을 이유
+## Crostini를 쓰지 않을 이유
 성능은 crostini와 crouton 모두 비슷하다고 한다. 물론 crouton을 쓰면 그래픽 가속이 되지만, 나는 xiwi를 사용하기 때문에 해당 사항이 없다. 그러나 crostini를 쓸 때에는 간단하지만 기이한 버그가 나를 괴롭혔다. 입력 문제. 리눅스 앱으로 창 전환을 하면 `tttttt...`, `222222...` 등의 기이한 입력이 발생하는 것. 그리고 CoqIde 경우 파일 열기나 저장 다이얼로그를 아무리 꺼도 다시 창이 떠버리는 기이한 버그. 보고를 하긴 했는데 언제 고쳐질지 모르겠고, crostini가 그리 완벽하진 않음을 느꼈다. 가끔은 앱이 실행되지 않는듯 삐걱거리는 것이 늘 느껴진다. 결국 crostini가 제공하는 통합성을 포기하고 crouton을 사용하기로 했다.
 
-### Crouton의 단점
+## Crouton의 단점
 클릭만 하면 되는 crostini에 비해 설치하기 복잡하다. 그리고 앱을 실행할 때마다 shell에서 명령어를 실행해야 한다. 크롬의 Crouton 확장이 잘 동작하지 않아 창이 실행되지 않을 때도 있다. 그래도 crostini처럼 이상하게 동작하진 않는다. 그러니 내가 쓰는 것.
 
-### Crouton로 18.04 Bionic 설치하기
+## Crouton로 18.04 Bionic 설치하기
 [crouton](https://github.com/dnschneid/crouton)의 `Usage` 안내를 따라 설치하되, 18.04를 설치하게 지정하자. 문제가 생길 수 있다고 하는데 아직 유의미한 문제를 마주하진 못했다. 링크에서 crouton을 받은 후에 크롬 창에서 ctrl + alt + T를 이용해 shell을 띄우고
 ```
 > shell
@@ -29,7 +29,7 @@ sudo enter-chroot
 ```
 로 container에 접속할 수 있다. 일단 `sudo apt update`로 패키지 정보를 업데이트하자.
 
-### ChromeOS와 어울리는 테마 설치
+## ChromeOS와 어울리는 테마 설치
 ```
 sudo apt install git pcmanfm lxappearance gtk2-engines-murrine gtk2-engines-pixbuf
 ```
