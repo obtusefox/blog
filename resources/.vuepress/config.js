@@ -4,8 +4,12 @@ module.exports = {
   description: 'Pseudo Computer Scientist',
   base: '/blog/',
   dest: 'docs',
+  theme: 'yuu',
   
   themeConfig: {
+    yuu: {
+			colorThemes: ['red'],
+		},
     sidebar: [
       {
           title: 'About',
