@@ -7,7 +7,7 @@ tags: [SF, Software_Foundations, Coq]
 ---
 # Tactics: 추가적인 증명의 기술들
 
-## Tactics
+## apply
 
 다음과 같은 코드가 있다.
 
@@ -46,4 +46,43 @@ Proof.
   apply eq2. apply eq1.  Qed.
 ```
 
-또한 가설 H를 `apply`한다면 
+또한 가설 H를 `apply`한다면 `forall`에 따라 어떤 변수를 양화한다.
+
+```ocaml
+Theorem silly3_firsttry : forall (n : nat),
+     true = beq_nat n 5  ->
+     beq_nat (S (S n)) 7 = true.
+Proof.
+  intros n H.
+(** Here we cannot use [apply] directly, but we can use the [symmetry] tactic, which switches the left and right sides of an equality in the goal. *)
+  symmetry.
+  simpl. (** (This [simpl] is optional, since [apply] will perform simplification first, if needed.) *)
+  apply H.  Qed.
+```
+
+바로 `apply`를 쓸 수 없는 경우, `symmetry`를 이용해 양변을 바꿀 수 있다. 혹은, `apply with`로, 적용하는 Theorem이나 Lemma의 특정 변수를 우리가 원하는 값이나 변수로 대체할 수 있다. 
+
+```ocaml
+Theorem trans_eq : forall (X:Type) (n m o : X),
+  n = m -> m = o -> n = o.
+Proof.
+  intros X n m o eq1 eq2. rewrite -> eq1. rewrite -> eq2.
+  reflexivity.  Qed.
+```
+
+예를 들어 trans_eq는 transitivity를 증명한다. 이 정리를 적용하여 한 사례를 증명해보도록 하자.
+
+```ocaml
+Example trans_eq_example' : forall (a b c d e f : nat),
+     [a;b] = [c;d] ->
+     [c;d] = [e;f] ->
+     [a;b] = [e;f].
+Proof.
+  intros a b c d e f eq1 eq2.
+  apply trans_eq with (m:=[c;d]).
+  apply eq1. apply eq2.   Qed.
+```
+
+이 경우, `apply`가 자동으로, `trans_eq`의 `type X`를 `nat`으로, `n`을 `[a;b]`로, `o`를 `[e;f]`로 양화한다. 그러나 `m`에 대해서는 양화를 하지 못한다. 따라서 이를 우리가 `with`로 지정해야 한다. 사실 어떤 경우에 적용이 되고, 어떤 경우에 적용되지 않는지는 모르겠다. [Coq의 공식 문서](https://coq.inria.fr/refman/proof-engine/tactics.html#coq:tacn.apply)를 참고.
+
+## inversion
