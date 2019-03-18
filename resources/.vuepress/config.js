@@ -52,20 +52,15 @@ module.exports = {
               'pl/sf/1-basics',
               'pl/sf/2-induction',
               'pl/sf/3-lists',
-              'pl/sf/4-poly',
-              'pl/sf/5-tactics',
-              'pl/sf/6-logic',
-              'pl/sf/7-indProp',
-              'pl/sf/8-maps',
-              'pl/sf/9-imp',
-              'pl/sf/10-auto'
+              'pl/sf/4-poly'
           ]
       }
     ]
   },
   markdow: {
       config: md => {
-          md.use(require('markdown-it-footnote'))
+          md.use(require('markdown-it-footnote')),
+          md.use(require("markdown-it-katex"));
       }
   }
 }

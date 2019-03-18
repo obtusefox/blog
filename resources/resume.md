@@ -9,7 +9,7 @@ Working everyday.
 * Rust / Scala
 
 ### Philosophical Area
-* Alan Turing's Philosophy of Mind
+* Early Buddhist Scripts
 * Seneca's Works
 
 ## Academics
@@ -24,9 +24,10 @@ Working everyday.
 * WebMPR Viewer (A Variation of Paraview Glance, Commercial)
 * Servo Based Application Runtime
 * PDF.js and Vue Based Web PDF Reader
-* Concept Map Generation of Seneca's "De Ira" Using NLP
+* (Currently working on) Rust Library Safeness
 
 ## Links
-* [Instagram](https://www.instagram.com/working_hann/)
-* [GitHub Page](https://github.com/obtusefox/)
 * [Contact](mailto:obtusefox@snu.ac.kr)
+* [GitHub Page](https://github.com/obtusefox/)
+* [HackerRank](https://www.hackerrank.com/muteape)
+* [Instagram](https://www.instagram.com/working_hann/)
