@@ -1,27 +1,29 @@
 {
-  "name": "obtuse-cave",
-  "version": "0.0.0",
-  "description": "Vuepress blog",
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vuepress dev resources",
-    "prod": "vuepress build resources",
-    "build": "vuepress build resources"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/obtusefox/obtusefox.github.io.git"
+    "dev": "vuepress dev src",
+    "eject": "vuepress eject src",
+    "build": "vuepress build src",
+    "build:lambda": "netlify-lambda build lambda",
+    "dev:lambda": "netlify-lambda serve lambda",
+    "update:comments": "node ./commands/getComments.js",
+    "new": "node commands/make.js"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/obtusefox/obtusefox.github.io/issues"
-  },
-  "homepage": "https://github.com/obtusefox/obtusefox.github.io#readme",
   "dependencies": {
-    "markdown-it": "^8.4.2",
+    "@vuepress/plugin-blog": "^1.0.0-alpha.30",
+    "@vuepress/plugin-google-analytics": "^1.0.0-alpha.30",
+    "@vuepress/shared-utils": "^1.0.0-alpha.44",
     "markdown-it-footnote": "^3.0.1",
-    "vuepress": "^0.14.8",
-    "vuepress-theme-yuu": "^1.0.0"
+    "mkdirp": "^0.5.1",
+    "moment": "^2.23.0",
+    "netlify-lambda": "^1.1.1",
+    "readline-sync": "^1.4.9",
+    "request": "^2.88.0",
+    "vuepress": "^1.0.0-alpha.30"
   }
 }
