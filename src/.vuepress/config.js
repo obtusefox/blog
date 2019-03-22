@@ -63,8 +63,8 @@ module.exports = {
   themeConfig: {
     nav: [
       {type: 'link', text: 'about', link: '/about/'},
-      {type: 'link', text: 'twitter', link: 'https://twitter.com/to_hutohu'},
-      {type: 'link', text: 'github', link: 'https://github.com/tohutohu'}
+      {type: 'link', text: 'github', link: 'https://github.com/obtusefox'},
+      {type: 'link', text: 'mail', link: 'mailto:obtusefox@snu.ac.kr'}
     ],
     lastUpdated: true
   },
