@@ -1,13 +1,10 @@
 <template>
   <div class="wrapper">
   <div class="share-header">
-    --Share--
   </div>
   <ul class="share">
     <li class="twitter"><a :href="`https://twitter.com/intent/tweet?url=https://to-hutohu.com${this.$page.path}&text=${this.$page.title}&via=to_hutohu`" target="_blank"><i class="fab fa-twitter"></i></a></li>
     <li class="facebook"><a :href="`https://www.facebook.com/share.php?u=https://to-hutohu.com${this.$page.path}&t=${this.$page.title}`" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-    <li class="linkedin"><a :href="`https://www.linkedin.com/shareArticle?mini=true&url=https://to-hutohu.com${this.$page.path}&title=${this.$page.title}`" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-    <li class="googleplus"><a :href="`https://plus.google.com/share?url=https://to-hutohu.com${this.$page.path}`" target="_blank"><i class="fab fa-google-plus-g"></i></a></li>
   </ul>
   </div>
 </template>
