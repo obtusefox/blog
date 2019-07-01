@@ -1,7 +1,7 @@
 ---
 title:  "Using Forward in VST"
 date:   2019-06-24 13:13:59
-description: how to: forward, forward_call, forward_loop, forward_for_simple_bound
+description: how to forward, forward_call, forward_loop, forward_for_simple_bound in VST
 categories: 
  - VST
 tags: [SF, PL, Coq, VST]

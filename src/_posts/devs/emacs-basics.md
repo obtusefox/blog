@@ -2,9 +2,12 @@
 title:  "Emacs 입문 / 기본 사용법"
 date:   2018-07-16 12:07:40
 description: Emacs의 기본적인 사용법
-categories: 개발
-tags: [tools]
+categories: 
+    - Devs
+tags: [devs, ]
 ---
+
+As of 2019-07-01 15:36:58, I'm using spacemacs when I'm required to use emacs, but for most of time, I stay with VS Code or CoqIDE for Coq.
 
 ## 텍스트 에디터
 나는 텍스트 에디터를 따로 배우지 않았다. 터미널에서 어쩔 수 없이 vim을 쓸 일은 있었지만, `wq`, `q!`정도의 명령어만 사용하고 기능들을 제대로 써보진 않았다. 복사 한 번 하기도 버거운 것이 터미널 기반 텍스트 에디터였다. 맨 처음에는 아마 노트패드++를 썼을 것 같지만 기억 나지 않는다. 내 첫 코딩은 awk였으며, 그 다음은 python2.7이었다. 그러나 툴은 기억 나지 않고, 리눅스에서 뭔가를 띄운 기억도 없다. 그러다가 Atom을 쓰기 시작했고, 17년에 Brackets를 써봤다가 Visual Studio Code에 정착한 기억이 난다. 그후로 나의 메인 에디터는 쭉 Code였다. 그러나 Proof General을 쓰기 위해 Emacs 사용법을 익힐 필요성이 생겼다. 터미널 환경에서 코딩하기 위해서는 CLI 기반 텍스트 에디터를 쓰는 것이 필요하다지만, 아직은 모르겠다. 서버를 다룰 일이 없어서인지. 어쩔 수 없이 써야만 했기에 Emacs를 배우기 시작했다.

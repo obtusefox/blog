@@ -2,9 +2,16 @@
 title:  "Crouton으로 크롬북에 개발환경 설정하기"
 date:   2018-07-16 12:07:40
 description: Crouton으로 크롬북에 개발환경 설정하기
-categories: 개발
-tags: [개발]
+categories: 
+    - Devs
+tags: [dev, crouton, crostini]
 ---
+
+As of 2019-07-01 15:34:43,
+the input problem in Crostini is fixed,
+and GPU acceleration is enabled for some devices.
+So, it is highly recommended to use Crostini.
+
 # 크롬북에서 Crouton 설정
 
 ## Crouton 셋팅하기
