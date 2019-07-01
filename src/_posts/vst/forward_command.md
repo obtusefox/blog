@@ -10,6 +10,6 @@ tags: [SF, PL, Coq, VST]
 Forward is the thing that most tricked me. Explanations weren't that helpful, either because I was too dull minded, all because they weren't enough. So, I will try to understand and explain the tactic in detailed and kind way.
 
 ## forward. Just forward.
-forward. is the most simple command when the condition is met. But to be honest, I still haven't figured out the right condition for the command. I just tried "hint," and when it said I could, I used it.
+forward. is the most simple command when the condition is met. I just tried "hint," and when it said I could, I used it. Conditions for the command is quiet straightforward. When you look at the next command, and if the command doesn't require additional parameter, you can forward.
 
-[ WIP ]
+## forwad_call. calling
