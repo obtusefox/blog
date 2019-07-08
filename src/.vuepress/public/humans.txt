@@ -5,7 +5,7 @@ Remembering, we are human beings and not machines.
   Site name: 
   Site URL: 
   Last update: 2018-08-22 00:00:00
-  Language: English/Portugues/Spanish
+  Language: English
   Twitter: 
   Contact: 
   Built with: Vue.js (Vuepress), HTML5, CSS3, Accessibility techniques, PWA e SEO

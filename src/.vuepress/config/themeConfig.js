@@ -10,8 +10,8 @@ module.exports = {
       buttonText: "Update" 
     }
   },
-  disqus: 'ktquez',
-  url: `https://MY_DOMAIN.COM`,
+  disqus: 'hann',
+  url: `https://hann-minhee.github.io`,
   cdn: '',
   blackWhite: true,
   topNavigation: false,
@@ -22,12 +22,6 @@ module.exports = {
     breakpoints: []
   },
   lazyLoad: {},
-  share: {
-    facebook: {
-      appId: `MY FACEBOOK APP ID`,
-      version: 'v3.1'
-    }
-  },
   elevator: {
     duration: 4000,
     mainAudio: '/music/elevator.mp3',

@@ -17,11 +17,11 @@ module.exports = {
     // ext: 'png',
     alt: 'Logo in 3 colors in play format'
   },
-
+/*
   share: {
     facebookCaption: '',
     twitterVia: '',
-  },
+  },*/
   newsletter: {
     provider: 'mailchimp',
     action: ''
