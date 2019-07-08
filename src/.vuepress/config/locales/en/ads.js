@@ -1,26 +1,26 @@
 module.exports = [
   {
-    text: 'Did you know that Udemy has more than 300 web development courses for only R $ 21.99?',
-    link: `YOUR_AFFILIATE_LINK`,
+    text: 'Placeholder for an ad0',
+    link: `han-minhee.github.io/blog`,
     image: {
       src: '/general/web-development.png',
-      alt: 'Illustration of a user studying online'
+      alt: 'Placeholder for ad image'
     },
     by: {
-      text: 'udemy.com',
-      link: `YOUR_AFFILIATE_LINK`
+      text: 'txt by',
+      link: `han-minhee.github.io/blog`
     }
   },
   {
-    text: 'The most complete course of Vue.js from Udemy, including Vuex and Vue-router with a promotional price not to be missed.',
-    link: `YOUR_AFFILIATE_LINK`,
+    text: 'Placeholder for an ad1',
+    link: `han-minhee.github.io/blog`,
     image: {
       src: '/general/web-development.png',
       alt: 'Illustration of a user studying online'
     },
     by: {
-      text: 'udemy.com',
-      link: `YOUR_AFFILIATE_LINK`
+      text: 'txt by',
+      link: `han-minhee.github.io/blog`
     }
   }
 ]

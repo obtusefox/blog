@@ -20,9 +20,6 @@ module.exports = [
   ['meta', { name: 'msapplication-square150x150logo', content: '/favicon/mstile-150x150.png' }],
   ['meta', { name: 'msapplication-wide310x150logo', content: '/favicon/ms-icon-310x310.png' }],
   
-  // Twitter
-  ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-  ['meta', { name: 'twitter:site', content: '@ktquez' }],
 
   // Facebook
   ['meta', { property: 'fb:app_id', content: `MY FACEBOOK APP ID` }],

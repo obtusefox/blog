@@ -1,15 +1,11 @@
 ---
 view: category
 lang: en
-order: 1      # Order of display in list categories
-top: true     # Include category in navigation Top
+order: 1
+top: true
 title: Essays
-description: Vue.js is the most successful javascript framework in recent years and certainly has its special space here.
-excerpt: Vue.js is the most successful javascript framework in recent years
+description: Some essays on various topics.
+excerpt: Mostly personal and lfe related essays of mine.
 slug: essays
 meta:
-  - property: og:image
-    content: /image-social-share.png
-  - name: twitter:image
-    content: /image-social-share.png
 ---
