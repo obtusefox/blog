@@ -1,0 +1,27 @@
+{
+  "name": "hann-blog",
+  "version": "1.0.0",
+  "description": "blog for han-minhee",
+  "main": "index.js",
+  "scripts": {
+    "build": "vuepress build src",
+    "dev": "vuepress dev src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/han-minhee/blog.git"
+  },
+  "keywords": [
+    "blog",
+    "vuepress"
+  ],
+  "author": "Han, Minhee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/han-minhee/blog/issues"
+  },
+  "homepage": "https://github.com/han-minhee/blog#readme",
+  "dependencies": {
+    "vuepress": "^1.0.2"
+  }
+}
