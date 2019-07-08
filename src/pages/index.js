@@ -15,6 +15,7 @@ import * as EventManager from '../utils/event-manager'
 import * as Dom from '../utils/dom'
 
 import { HOME_TITLE, CATEGORY_TYPE } from '../constants'
+import Image from 'gatsby-image'
 
 const DEST_POS = 316
 const BASE_LINE = 80

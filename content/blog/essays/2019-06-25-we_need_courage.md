@@ -2,7 +2,7 @@
 title:  "Courage Is What We Need"
 date:   2019-06-25 15:56:13
 description: Courage, is what we need right now
-category: Essays
+category: essays
 tags: [essay]
 
 ---
