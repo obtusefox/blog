@@ -1,30 +1,35 @@
 {
-  "name": "blog",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "your-name-app",
+  "version": "0.1.0",
+  "description": "Descripton your webapp",
   "scripts": {
-    "dev": "vuepress dev src",
-    "eject": "vuepress eject src",
-    "build": "vuepress build src",
-    "build:lambda": "netlify-lambda build lambda",
-    "dev:lambda": "netlify-lambda serve lambda",
-    "update:comments": "node ./commands/getComments.js",
-    "new": "node commands/make.js"
+    "dev": "node_modules/.bin/vuepress dev src",
+    "build": "node_modules/.bin/vuepress build src"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ktquez/vuepress-theme-ktquez-starter"
+  },
+  "keywords": [
+    "vuepress",
+    "vuepress-theme",
+    "site",
+    "blog",
+    "theme-ktquez",
+    "markdown",
+    "static",
+    "vuejs"
+  ],
+  "author": "Alan Ktquez <ktquez@gmail.com> (https://ktquez.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ktquez/vuepress-theme-ktquez-starter/issues"
+  },
+  "homepage": "https://github.com/ktquez/vuepress-theme-ktquez#readme",
+  "devDependencies": {
+    "vuepress": "^0.14.2"
+  },
   "dependencies": {
-    "@vuepress/plugin-blog": "^1.0.0-alpha.30",
-    "@vuepress/plugin-google-analytics": "^1.0.0-alpha.30",
-    "@vuepress/shared-utils": "^1.0.0-alpha.44",
-    "cac": "^6.5.2",
-    "markdown-it-footnote": "^3.0.1",
-    "mkdirp": "^0.5.1",
-    "moment": "^2.23.0",
-    "netlify-lambda": "^1.1.1",
-    "readline-sync": "^1.4.9",
-    "request": "^2.88.0",
-    "vuepress": "^1.0.0-alpha.30"
+    "vuepress-theme-ktquez": "^0.2.18"
   }
 }

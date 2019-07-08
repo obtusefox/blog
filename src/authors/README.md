@@ -1,6 +1,6 @@
 ---
-view: home
-title: 
+view: authors
+title: All authors of 
 description: 
 meta:
   - property: og:image

@@ -1,7 +1,8 @@
 ---
-view: home
-title: 
+view: posts
+title: All posts of
 description: 
+excerpt: 
 meta:
   - property: og:image
     content: /image-social-share.png
