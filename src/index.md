@@ -1,8 +1,7 @@
+# Ora et Labora
 
-### About this blog
 **This is my personal blog, and I would like to share some of my works, in case someone might find it useful.**
 
-# Ora et Labora
 The very philosophy of my mind. It means "Pray and Work." This single motto can represent the Rule of Saint Benedict.
 
 To cite from [the Wikipedia article](https://en.wikipedia.org/wiki/Rule_of_Saint_Benedict),
