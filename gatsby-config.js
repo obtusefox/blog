@@ -28,39 +28,42 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 590,
-              linkImagesToOriginal: false,
-            },
-          },
-          {
-            resolve: `gatsby-remark-images-medium-zoom`,
-            options: {
-              margin: 36,
-              scrollOffset: 0,
-            },
-          },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
-          },
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              inlineCodeMarker: '%',
-            },
-          },
-          `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
-          `gatsby-remark-autolink-headers`,
-          `gatsby-remark-emoji`,
         ],
       },
     },
+    
+    {
+      resolve: `gatsby-remark-images`,
+      options: {
+        maxWidth: 800,
+        linkImagesToOriginal: true,
+        sizeByPixelDensity: true,
+        withWebp: true,
+      },
+    },
+    {
+      resolve: `gatsby-remark-images-medium-zoom`,
+      options: {
+        margin: 36,
+        scrollOffset: 0,
+      },
+    },
+    {
+      resolve: `gatsby-remark-responsive-iframe`,
+      options: {
+        wrapperStyle: `margin-bottom: 1.0725rem`,
+      },
+    },
+    {
+      resolve: `gatsby-remark-prismjs`,
+      options: {
+        inlineCodeMarker: '%',
+      },
+    },
+    `gatsby-remark-copy-linked-files`,
+    `gatsby-remark-smartypants`,
+    `gatsby-remark-autolink-headers`,
+    `gatsby-remark-emoji`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
