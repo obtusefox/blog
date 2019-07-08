@@ -8,5 +8,12 @@ module.exports = {
       title: 'obtuseCave',
       description: ''
     }
+  },
+  themeConfig: {
+    nav: [
+      {type: 'link', text: 'about', link: '/about/'},
+      {type: 'link', text: 'github', link: 'https://github.com/han-minhee/'}
+    ],
+    lastUpdated: true
   }
 }

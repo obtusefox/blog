@@ -115,6 +115,7 @@ function resolvePath (relative, base, append) {
  */
 export function resolveSidebarItems (page, regularPath, site, localePath) {
   return [page]
+  /*
   const { pages, themeConfig } = site
 
   const localeConfig = localePath && themeConfig.locales
@@ -139,6 +140,7 @@ export function resolveSidebarItems (page, regularPath, site, localePath) {
       ? config.map(item => resolveItem(item, normalizedPagesMap, base))
       : []
   }
+  */
 }
 
 /**

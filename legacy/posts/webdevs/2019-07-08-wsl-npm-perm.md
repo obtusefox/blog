@@ -9,8 +9,7 @@ excerpt:
 cover: false
 coverAlt:
 demo:
-categories:
-  - webdev
+category: webDev
 tags:
   - npm
   - webdev
