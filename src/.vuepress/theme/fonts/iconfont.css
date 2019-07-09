@@ -35,10 +35,6 @@
   content: "\e61e";
 }
 
-.component-wechat:before {
-  content: "\e615";
-}
-
 .component-npm:before {
   content: "\e88d";
 }
@@ -59,20 +55,12 @@
   content: "\e628";
 }
 
-.component-qq:before {
-  content: "\e60a";
-}
-
 .component-other:before {
   content: "\e60e";
 }
 
 .component-home:before {
   content: "\e65b";
-}
-
-.component-huawei:before {
-  content: "\e6b9";
 }
 
 .component-up:before {
@@ -87,24 +75,12 @@
   content: "\e63b";
 }
 
-.component-bokeyuan:before {
-  content: "\e626";
-}
-
-.component-beian:before {
-  content: "\e667";
-}
-
 .component-copyright:before {
   content: "\ef87";
 }
 
 .component-account:before {
   content: "\e607";
-}
-
-.component-jianshu:before {
-  content: "\e600";
 }
 
 .component-theme:before {
