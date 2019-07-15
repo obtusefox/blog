@@ -70,8 +70,6 @@ export default {
         }
         return [...this.userNav, languageDropdown]
       }
-
-      // blogConfig 的处理，根绝配置自动添加分类和标签
       const blogConfig = this.$themeConfig.blogConfig || {},
             isHasCategory = this.userNav.some(item => {
               if (blogConfig.category) {

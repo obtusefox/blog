@@ -2,7 +2,7 @@
 title:  "4. Poly: Polymorphism, 다형성"
 date:   2018-07-16 12:07:40
 description: Coq에서의 Polymorphism에 대해 알아보자.
-categories: 개발
+category: 개발
 tags: [SF, Software_Foundations, Coq]
 ---
 
