@@ -2,7 +2,6 @@
 view: post
 layout: post
 lang: en
-author: han-minhee
 title: Sorrows and Rejoicings of Unrequited Love
 description: Unrequited love, how beautiful.
 excerpt:
@@ -12,7 +11,7 @@ demo:
 category: essays
 tags:
   - essay
-created_at: 2019-07-08 14:18:55
+date: 2019-07-08 14:18:55
 updated_at: 2019-07-08 14:19:06
 meta:
 ---

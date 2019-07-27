@@ -13,6 +13,6 @@
         "vuepress-plugin-flowchart": "1.4.3"
     },
     "dependencies": {
-        "vuepress-theme-reco": "^1.0.2"
+        "vuepress-theme-reco": "^1.0.3"
     }
 }
