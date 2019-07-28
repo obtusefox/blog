@@ -7,8 +7,6 @@ tags: [essay]
 
 ---
 
-# Courage is what we need
-
 ## Courage instead of hope
 
 So, I pondered myself. If it weren't for hope, what should we have? We need something that can make us live out these terrible moments. My conclusion was, courage. We need courage. Hope can persist only when it can happen. Hope can exist only when there's a possibility of things getting better. But sadly, we often confront so many "hopeless" situations. 

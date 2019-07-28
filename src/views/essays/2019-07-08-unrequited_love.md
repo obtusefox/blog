@@ -4,16 +4,10 @@ layout: post
 lang: en
 title: Sorrows and Rejoicings of Unrequited Love
 description: Unrequited love, how beautiful.
-excerpt:
-cover: false
-coverAlt:
-demo:
 category: essays
 tags:
   - essay
 date: 2019-07-08 14:18:55
-updated_at: 2019-07-08 14:19:06
-meta:
 ---
 
 Unrequited love is often deemed to be inferior and troublesome relative to its requited kin. Undetermined, unresponded or unrequited love is something that always drives us crazy -sometimes not just figuratively but actually mentally ill-. Look at Werther. He is one of the most typical depictions of what love should be like in the view of romanticism. His unrequited love was so painful that he shot himself. The story of Werther tells us that unrequitedness is painful, and the pain is what makes love pure and beautiful. As unconscious romanticists, we project this image of unrequited love to our own, consequently deepening our sorrows. However, this really is a terrible and pathetic notion. Because of Werther, we are not able to cure the sorrows and enjoy the rejoicings of the unrequited love. Every love begins as an unrequited one, and it is the most valuable repository for guidances in love.
