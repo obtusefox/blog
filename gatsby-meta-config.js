@@ -1,8 +1,8 @@
 module.exports = {
   title: `obtuseCave`,
-  description: `Blog posted about ...`,
+  description: `Blog on various issues`,
   author: `Han, Minhee`,
-  introduction: `I explain with words and code. I explain with words and code. I explain with words and code.`,
+  introduction: `Es irrt der Mensch solang' er strebt.`,
   siteUrl: `https://han-minhee.github.io/blog/`, // Your blog site url
   social: {
     twitter: ``, // Your Twitter account
