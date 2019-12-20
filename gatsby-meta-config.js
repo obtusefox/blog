@@ -2,7 +2,7 @@ module.exports = {
   title: `obtuseCave`,
   description: `Blog on various issues`,
   author: `Han, Minhee`,
-  introduction: `Es irrt der Mensch solang' er strebt. Mainly into parallelisation and optimization.`,
+  introduction: `Mainly into parallelization and optimization. Es irrt der Mensch solang' er strebt. `,
   siteUrl: `https://han-minhee.github.io/blog/`, // Your blog site url
   social: {
     twitter: ``, // Your Twitter account
