@@ -4,13 +4,52 @@ date: 2020-05-16 11:05:98
 category: arch-security
 ---
 
-Reference: https://www.youtube.com/watch?v=I5mRwzVvFGE
+# Spectre and Meltdown
 
-From the beginning of 2018
+## 요약
 
-2018년 초에 최악의 경우 커널 메모리까지 읽을 수 있는, 그래서 비밀번호까지 읽을 수 있는 버그 발견.
-이건 소프트웨어가 아니라 CPU 때문.
-인텔, AMD 상관 없이 side channel attack에 노출된다.
-해결책? CPU를 교체해라?
+2018년 초에 발표된 버그. 최악에는 커널 메모리까지 읽을 수 있다.
+소프트웨어 문제가 아니라, 현대적 CPU가 작동하는 방식의 문제. 
+side-channel 공격에 노출된다.
 
-심지어는 자바스크립트를 통해서 노출 가능.
+접근하지 못해야 하는 영역에 접근하는 것.
+자바스크립트도 이론상으론 가능하다.
+
+이걸 해결하기 위해 심한 성능 저하가 생긴다.
+다른 exploit와 다른 건, 이건 HW 자체적인 것이기 때문에 근본적으로 다르다.
+
+## 스펙터와 멜트다운이 다른 점은?
+둘이 비슷한 방식이다. 멜트다운은 커널 메모리에 접근해서, 그래서 어떠한 메모리든 접근하는 것.
+
+같은 코드가 모든 OS에서 동작.
+
+## 어떻게 작동?
+원래 array 넘어가는 값에 접근하면 안됨.
+근데 접근할 수 있게 됨.
+
+## CPU의 어떤 기능을 쓰냐?
+마이크로 코드가 가장 잘 동작할 수 있는 방법을 찾음.
+speculation을 통해 작동.
+relaxed order로 작동.
+한 번 실행해놓고, 여기 안 가야 하면 undo하자.
+
+
+메모리의 어떤 위치에 가서 값을 접근하면,
+시간이 오래 걸리니까 CPU가 그 기간 동안 미리 실행을 할 것.
+근데 값을 어떻게 빼올까?
+
+모든 캐쉬 라인을 다 빼오도록 한다.
+근데 그럼 실행값이 버려지더라도
+캐쉬는 그대로 남아있음.
+
+그럼 여러 값에 접근하면서
+시간을 측정하면
+캐쉬에 어떤 값이 남아있는지를 알 수 있음.
+
+멜트 다운은 커널 스페이스를 빼오는 것.
+왜냐하면 protection check 전에 실행을 해버려서.
+
+## Reference
+https://www.youtube.com/watch?v=I5mRwzVvFGE
+
+https://www.techrepublic.com/article/spectre-and-meltdown-explained-a-comprehensive-guide-for-professionals/
